@@ -19,7 +19,6 @@ export default (state = initialState, action) => {
     })
   } 
   else if (action.type === actions.GUESS ) {
-
     let guess = parseInt(action.guess, 10);
     let feedback;
     const difference = Math.abs(guess - state.correctAnswer);
