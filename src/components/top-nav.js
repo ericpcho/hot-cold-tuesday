@@ -4,20 +4,6 @@ import './top-nav.css';
 import {connect} from 'react-redux';
 
 export class TopNav extends React.Component {
-    onNewGame(event) {
-        event.preventDefault();
-        if (this.props.onNewGame) {
-            this.props.onNewGame();
-        }
-    }
-
-    // onInfo(event) {
-    //     event.preventDefault();
-    //     if (this.props.onInfo) {
-    //         this.props.onInfo();
-    //     }
-    // }
-
     render() {
         return (
             <nav>

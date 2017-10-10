@@ -6,19 +6,6 @@ import {connect} from 'react-redux';
 import './header.css';
 
 export class Header extends React.Component  {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         showInfoModal: false
-    //     };
-    // }
-
-    // toggleInfoModal() {
-    //     this.setState({
-    //         showInfoModal: !this.state.showInfoModal
-    //     });
-    // }
-
     render() {
         let infoModal;
         if (this.props.showInfoModal) {
@@ -27,7 +14,7 @@ export class Header extends React.Component  {
 
         return (
             <header>
-                <TopNav onNewGame={this.props.onNewGame} />
+                <TopNav />
                 {infoModal}
                 <h1>HOT or COLD</h1>
             </header>
@@ -36,7 +23,7 @@ export class Header extends React.Component  {
 };
 
 const mapStateToProps = state => ({
-    showInfoModal: state.showInfoModal
+    showInfoModal: state.showInfoModal,
 })
 
 export default connect(mapStateToProps)(Header);

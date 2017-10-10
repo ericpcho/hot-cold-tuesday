@@ -4,13 +4,6 @@ import {connect} from 'react-redux';
 import './info-modal.css';
 
 export class InfoModal extends React.Component {
-    // onClose(event) {
-    //     event.preventDefault();
-    //     if (this.props.onClose) {
-    //         this.props.onClose();
-    //     }
-    // }
-
     render() {
         return (
             <div className="overlay" id="modal">
