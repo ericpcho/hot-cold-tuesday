@@ -4,6 +4,7 @@ export const NEW_GAME = 'NEW_GAME';
 // return initial state
 export const newGame = () => ({
   type: NEW_GAME,
+
 });
 
 export const GUESS = 'GUESS';

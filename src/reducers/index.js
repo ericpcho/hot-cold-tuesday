@@ -50,6 +50,7 @@ export default (state = initialState, action) => {
     })
   }
   else if (action.type === actions.TOGGLE_INFO_MODAL) {
+    console.log('Toggled!')
     return Object.assign({}, state, {showInfoModal: !state.showInfoModal})
   }
   return state;

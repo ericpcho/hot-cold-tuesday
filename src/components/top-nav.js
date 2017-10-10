@@ -11,24 +11,24 @@ export class TopNav extends React.Component {
         }
     }
 
-    onInfo(event) {
-        event.preventDefault();
-        if (this.props.onInfo) {
-            this.props.onInfo();
-        }
-    }
+    // onInfo(event) {
+    //     event.preventDefault();
+    //     if (this.props.onInfo) {
+    //         this.props.onInfo();
+    //     }
+    // }
 
     render() {
         return (
             <nav>
                 <ul className="clearfix">
                     <li>
-                        <a className="what" href="#" onClick={e => this.props.dispatch(actions.toggleInfoModal(e))}>
+                        <a className="what" href="#" onClick={() => this.props.dispatch(actions.toggleInfoModal())}>
                             What?
                         </a>
                     </li>
                     <li>
-                        <a className="new" href="#" onClick={e => this.onNewGame(e)}>
+                        <a className="new" href="#" onClick={() => this.props.dispatch(actions.newGame())}>
                             + New Game
                         </a>
                     </li>
@@ -38,12 +38,4 @@ export class TopNav extends React.Component {
     }
 };
 
-const mapStateToProps = state => ({
-    guesses: state.guesses,
-    feedback: state.feedback,
-    correctAnswer: state.correctAnswer,
-    showInfoModal: state.showInfoModal,
-    totalGuesses: state.totalGuesses
-});
-
-export default connect(mapStateToProps)(TopNav);
+export default connect()(TopNav);
