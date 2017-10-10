@@ -1,8 +1,9 @@
 import React from 'react';
-
+import * as actions from '../actions';
 import './top-nav.css';
+import {connect} from 'react-redux';
 
-export default class TopNav extends React.Component {
+export class TopNav extends React.Component {
     onNewGame(event) {
         event.preventDefault();
         if (this.props.onNewGame) {
@@ -22,7 +23,7 @@ export default class TopNav extends React.Component {
             <nav>
                 <ul className="clearfix">
                     <li>
-                        <a className="what" href="#" onClick={e => this.onInfo(e)}>
+                        <a className="what" href="#" onClick={e => this.props.dispatch(actions.toggleInfoModal(e))}>
                             What?
                         </a>
                     </li>
@@ -37,3 +38,12 @@ export default class TopNav extends React.Component {
     }
 };
 
+const mapStateToProps = state => ({
+    guesses: state.guesses,
+    feedback: state.feedback,
+    correctAnswer: state.correctAnswer,
+    showInfoModal: state.showInfoModal,
+    totalGuesses: state.totalGuesses
+});
+
+export default connect(mapStateToProps)(TopNav);
